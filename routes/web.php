@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjexProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -17,4 +18,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [AuthController::class, 'dashboard']); 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('products', ProductController::class);
+    Route::resource('ajex-products', AjexProductController::class);
 });
